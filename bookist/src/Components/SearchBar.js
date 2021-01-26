@@ -26,15 +26,28 @@ class SearchBar extends Component {
     }
 
     render() {
-        return (
-            <div className='SearchBar'>
-                <div className='searchBox'>
-                    <input type='text' onChange={e => this.handleChange(e.target.value)} value={this.state.input}/>
-                    <button onClick={this.handleClick}>Search</button>
-                    <button onClick={this.handleClear}>Clear Search</button>
+        if (this.state.input !== '') {
+            return (
+                <div className='SearchBar'>
+                    <div className='searchBox'>
+                        <input type='text' onChange={e => this.handleChange(e.target.value)} value={this.state.input} />
+                        <button onClick={this.handleClick}>Search</button>
+                        <button onClick={this.handleClear}>Clear Search</button>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }
+        else{
+            return (
+                <div className='SearchBar'>
+                    <div className='searchBox'>
+                        <input type='text' onChange={e => this.handleChange(e.target.value)} value={this.state.input} />
+                        <button onClick={this.handleClick}>Search</button>
+                        {/* <button onClick={this.handleClear}>Clear Search</button> */}
+                    </div>
+                </div>
+            )
+        }
     }
 }
 

@@ -17,8 +17,10 @@ class App extends Component {
 
   addToShelf = (newBook) => {
     let copy = [...this.state.shelf];
-    copy.push(newBook);
-    this.setState({
+      if (!copy.includes(newBook)) {
+        copy.push(newBook);
+      }
+      this.setState({
       shelf: copy
     })
   }
@@ -30,19 +32,20 @@ class App extends Component {
   }
 
   filterBooks = (input) => {
+    let inputLower = input.toLowerCase();
     let reduced = this.state.books.reduce(((titles, current) => {
-      if(current.title.includes(input)){
-      let titleArr = {id: current.id, title: current.title, author: current.author, img: current.img}
-      titles.push(titleArr)
+      let titleLower = current.title.toLowerCase();
+      if (titleLower.includes(inputLower)) {
+        let titleArr = { id: current.id, title: current.title, author: current.author, img: current.img }
+        titles.push(titleArr)
       }
       return titles
     }), [])
-    console.log(reduced)
-    // const result = reduced.filter(title => title.includes(input));
+
     this.setState({
       books: reduced
     })
-  
+
   }
 
   reset = () => {
@@ -56,11 +59,11 @@ class App extends Component {
       <main>
         <div className="App">
           <Header />
-          <SearchBar filterBooks={this.filterBooks} reset={this.reset}/>
+          <SearchBar filterBooks={this.filterBooks} reset={this.reset} />
           <div className='content'>
             <Bookist books={this.state.books} addToShelf={this.addToShelf} />
             <div className='line' />
-            <Shelf shelf={this.state.shelf} clearShelf={this.clearShelf}/>
+            <Shelf shelf={this.state.shelf} clearShelf={this.clearShelf} />
           </div>
         </div>
       </main>
