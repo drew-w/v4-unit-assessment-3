@@ -1,0 +1,106 @@
+header {
+  background-color: lightgray;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+  color: rgb(2, 133, 72);
+  font-family: monospace;
+  box-shadow: 0px 7px 62px 13px rgba(0,0,0,0.32);
+  -webkit-box-shadow: 0px 7px 62px 13px rgba(0,0,0,0.32);
+  -moz-box-shadow: 0px 7px 62px 13px rgba(0,0,0,0.32);
+}
+
+main{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(221, 221, 221);
+}
+
+.App {
+  text-align: center;
+  width: 100%;
+  height: calc(100% - 120px);
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.shelfBox {
+  width: 20%;
+  height: 100%;
+  margin: 20px
+}
+
+.Shelf{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  /* border: 1px darkmagenta solid; */
+  /* margin: 20px; */
+  display: flex;
+  justify-content: center;
+}
+
+.bookTitles{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line {
+  height: calc(100% - 20px);
+  width: 5px;
+  background-color: rgb(77, 77, 77);
+  margin-top: 20px;
+}
+
+.Booklist{
+  width: 80%;
+  height: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px;
+  /* border: solid 1px darkcyan; */
+}
+
+.Booklist img{
+  width: 150px;
+}
+
+.eachBook{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.textBox {
+  width: 150px;
+  height: fit-content;
+  /* border: 1px solid darkgreen; */
+}
+
+.SearchBar{
+  /* border: 1px solid darkgreen; */
+  margin: 10px;
+  display:flex;
+  justify-content: center;
+}
+
+.searchBox{
+  width: 25%;
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
